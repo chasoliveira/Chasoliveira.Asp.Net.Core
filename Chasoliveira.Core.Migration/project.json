@@ -1,0 +1,27 @@
+﻿{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0-rc2-*"
+    },
+    "Microsoft.EntityFrameworkCore.Tools": {
+      "type": "build",
+      "version": "1.0.0-preview1-final"
+    },
+    "Chasoliveira.Core.Data": "1.0.0-*",
+    "Chasoliveira.Core.Domain": "1.0.0-*"
+  },
+  "tools": {
+    "Microsoft.EntityFrameworkCore.Tools": {
+      "imports": [ "portable-net451+win8" ],
+      "version": "1.0.0-preview1-final"
+    }
+  },
+  "frameworks": {
+    "netcoreapp1.5": {
+      "imports": [ "dnxcore50", "portable-net45+win8" ]
+    }
+  }
+}

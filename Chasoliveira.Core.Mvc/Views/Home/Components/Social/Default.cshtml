@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Chasoliveira.Core.Dto.SocialDTO>
+<ul class="list-inline pull-right">
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="@item.Url" title="@item.Description" target="_blank"><span class="social fa fa-@item.Icon fa-2x"></span></a>
+        </li>
+    }
+</ul>
