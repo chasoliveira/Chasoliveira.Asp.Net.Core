@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Chasoliveira.Core.Dto;
 using Chasoliveira.Core.Application.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Chasoliveira.Core.Application
 {
@@ -13,6 +14,8 @@ namespace Chasoliveira.Core.Application
         public static void Initialize(IServiceProvider serviceProvider)
         {
             _personAppService = (IPersonAppService)serviceProvider.GetService(typeof(IPersonAppService));
+            var context = (Data.Contexts.ChasoDBContext)serviceProvider.GetService(typeof(Data.Contexts.ChasoDBContext));
+            context.Database.Migrate();
             InitializePerson();
         }
 

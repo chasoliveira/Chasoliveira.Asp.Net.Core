@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqJ2m5XOfvkOlx+jgs6eLnwAAAAACAAAAAAAQZgAAAAEAACAAAAAwLyRz7czac3zSO/qjJY5YS9U1YvM+4Fm5wWgFXjtXUAAAAAAOgAAAAAIAACAAAACdJQW06og4pFgdRanM7vb/9ViBZHKkvcQnmqnwMG9GOIAAAADAx+Ho6utF5VDaAlVSeJLu8xP4knWagRoCgiyGWKCnQhYdJkxKnAfxq39ZlYiczWNDh6q2jA6eXOc0rQY9ZERMboISp6OBh61qSjYAeQTdxfALY/p1H9OMcb9cjKZXR97/u9jw/Ww1AuI+d/q1NRJBDAd9YUH0buPuNIIItbeqXEAAAADk5Xu65o8PbFyW3hCR98PQguQ6HDfzLLCyjOuOjGF6ToqsqK+tNwM0hEyinDPaySirt4ovqQQ+kd3Qa8eNLTuU</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="SQLiteConnection">
+      <Value>FileName=./chasoliveira.db</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EfMigrations Include="Chasoliveira.Core.Data.Contexts.ChasoDBContext">
+      <Value>
+      </Value>
+    </EfMigrations>
+  </ItemGroup>
+</Project>

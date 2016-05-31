@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Chasoliveira.Core.Dto.HistoryDTO>
+<div id="job" class="row mobmid">
+    <hr class="col-md-12 line">
+    <div class="col-sm-1">
+        <span class="secicon fa fa-briefcase"></span>
+    </div>
+    <div class="col-sm-11">
+        <h3>Job Experiences</h3>
+        @foreach (var position in Model)
+        {
+            <div class="row">
+                <div class="col-md-9">
+                    <h4>@position.Title</h4>
+                    <p class="sub">
+                        <a href="">@position.Company</a>
+                    </p>
+                    <p>@position.Description</p>
+                </div>
+                <div class="year col-md-3">
+                    <p> @position.Start.ToString("yyyy") - @position.FinishedString</p>
+                </div>
+                @if (position != Model.Last())
+                {<hr class="col-md-12 line">}
+            </div>
+        }
+    </div>
+</div>
