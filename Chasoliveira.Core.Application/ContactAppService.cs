@@ -37,7 +37,8 @@ namespace Chasoliveira.Core.Application
 
         public IEnumerable<ContactDTO> AllByPerson(int personId)
         {
-            var contactsDto = MapperModelDTO.Map<IEnumerable<ContactDTO>>(_contactService.AllByPerson(personId));
+            var allByPerson = _contactService.AllByPerson(personId);
+            var contactsDto = MapperModelDTO.Map<IEnumerable<ContactDTO>>(allByPerson);
             return contactsDto;
         }
         public new ContactDTO FindOne(int id)

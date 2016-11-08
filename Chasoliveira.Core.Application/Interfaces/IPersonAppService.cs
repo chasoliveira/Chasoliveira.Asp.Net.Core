@@ -4,6 +4,6 @@ namespace Chasoliveira.Core.Application.Interfaces
 {
     public interface IPersonAppService : IAppServiceBase<PersonDTO>
     {
-
+        PersonDTO FirstActive();
     }
 }

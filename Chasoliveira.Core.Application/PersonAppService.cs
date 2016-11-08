@@ -5,6 +5,7 @@ using Chasoliveira.Core.Application.Interfaces;
 using Chasoliveira.Core.Dto;
 using Chasoliveira.Core.Domain.Entities;
 using Chasoliveira.Core.Domain.Interfaces.Services;
+using System.Linq;
 
 namespace Chasoliveira.Core.Application
 {
@@ -55,6 +56,12 @@ namespace Chasoliveira.Core.Application
         public new PersonDTO FindOne(int id)
         {
             var person = base.FindOne(id);
+            var personDto = MapperModelDTO.Map<PersonDTO>(person);
+            return personDto;
+        }
+        public PersonDTO FirstActive()
+        {
+            var person = ((IPersonService)_serviceBase).FirstActive();
             var personDto = MapperModelDTO.Map<PersonDTO>(person);
             return personDto;
         }

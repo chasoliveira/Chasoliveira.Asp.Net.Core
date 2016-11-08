@@ -10,16 +10,16 @@ namespace Chasoliveira.Core.Application
         {
             protected override void Configure()
             {
-                CreateMap<Contact, ContactDTO>().ReverseMap();
-                CreateMap<History, HistoryDTO>()
-                    .ForMember(h => h.IsCurrently, o => o.Ignore())
-                    .ForMember(h => h.FinishedString, o => o.Ignore())
-                    .ReverseMap();
                 CreateMap<Person, PersonDTO>()
                     .ForMember(p => p.FullName, o => o.Ignore())
                     .ForMember(p => p.DisplayName, o => o.Ignore())
                     .ForMember(p => p.Age, o => o.Ignore())
                     .ReverseMap();
+                CreateMap<History, HistoryDTO>()
+                    .ForMember(h => h.IsCurrently, o => o.Ignore())
+                    .ForMember(h => h.FinishedString, o => o.Ignore())
+                    .ReverseMap();
+                CreateMap<Contact, ContactDTO>().ReverseMap();
                 CreateMap<Skill, SkillDTO>().ReverseMap();
                 CreateMap<Social, SocialDTO>().ReverseMap();
                 CreateMap<User, UserDTO>().ReverseMap();

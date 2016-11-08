@@ -12,7 +12,7 @@ namespace chasoliveira.Mvc.Controllers
         }
         public IActionResult Index()
         {
-            var person = _personAppService.FindOne(1) ;
+            var person = _personAppService.FirstActive();
             return View(person);
         }
 

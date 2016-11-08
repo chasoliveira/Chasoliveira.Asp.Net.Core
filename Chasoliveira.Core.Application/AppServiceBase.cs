@@ -7,7 +7,7 @@ namespace Chasoliveira.Core.Application
 {
     public abstract class AppServiceBase<T> where T : class, new()
     {
-        readonly IServiceBase<T> _serviceBase;
+        protected readonly IServiceBase<T> _serviceBase;
         protected AppServiceBase(IServiceBase<T> serviceBase)
         {
             _serviceBase = serviceBase;

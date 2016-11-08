@@ -1,4 +1,5 @@
-﻿using Chasoliveira.Core.Domain.Entities;
+﻿using System;
+using Chasoliveira.Core.Domain.Entities;
 using Chasoliveira.Core.Domain.Interfaces.Repositories;
 using Chasoliveira.Core.Domain.Interfaces.Services;
 
@@ -8,6 +9,11 @@ namespace Chasoliveira.Core.Domain.Services
     {
         public PersonService(IPersonRepository personRepository) : base(personRepository)
         {
+        }
+
+        public Person FirstActive()
+        {
+            return FindOne(p => p.Active);
         }
     }
 }

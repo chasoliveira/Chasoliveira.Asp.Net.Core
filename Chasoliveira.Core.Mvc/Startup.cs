@@ -2,6 +2,7 @@
 using Chasoliveira.Core.Application.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -27,6 +28,12 @@ namespace Chasoliveira.Core.Mvc
         {
             // Add framework services.
             services.AddMvc();
+            services.Configure<RazorViewEngineOptions>(options => {
+                options.AreaViewLocationFormats.Clear();
+                options.AreaViewLocationFormats.Add("/Areas/{2}/Views/{1}/{0}.cshtml");
+                options.AreaViewLocationFormats.Add("/Areas/{2}/Views/Shared/{0}.cshtml");
+                options.AreaViewLocationFormats.Add("/Views/Shared/{0}.cshtml");
+            });
             DependencyService.Register(services, ConnectionString);
             services.AddScoped<IContactAppService, ContactAppService>();
             services.AddScoped<IHistoryAppService, HistoryAppService>();
@@ -57,6 +64,9 @@ namespace Chasoliveira.Core.Mvc
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "areaRoute",
+                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

@@ -24,15 +24,16 @@ namespace Chasoliveira.Core.Application
             if (_personAppService.All().Any()) return;
             var person = new PersonDTO
             {
+                Active = true,
                 FirstName = "Charles",
                 MiddleName = "Silva",
                 LastName = "Oliveira",
                 Birthday = new DateTime(1986, 06, 01),
                 Occupation = "Systems Analyst - .Net Developer",
-                PhotoProfile = "images/chasoliveira.jpg",
-                PersonStatment = "Sou Engenheiro de Software, com duas especializações a mais recente em Governança de TI e a anterior em Engenharia de Sistemas, "+
-                "sou Bacharel em Sistemas de Informação, atualmente trabalho em um projecto com Xamarin, consumindo Web API Restfull, "+
-                "tenho experiência em ASP.NET MVC, Visual C #, .NET , já fiz alguns trabalhos com Visual Basic .NET e outros com PHP. Tenho tido oportunidade de desenvolver com utilizando banco de dados "+
+                PhotoProfile = "images/perfil.jpg",
+                PersonStatment = "Sou Engenheiro de Software, com três especializações a mais recente estou cursando MBA em Arquitetura de Software, Especialista em Governança de TI e Especialista em Engenharia de Sistemas, " +
+                "sou Bacharel em Sistemas de Informação, atualmente trabalho em um projecto com Xamarin, consumindo Web API Restfull, " +
+                "tenho experiência em ASP.NET MVC, Visual C #, .NET , já fiz alguns trabalhos com Visual Basic .NET e outros com PHP. Tenho tido oportunidade de desenvolver com utilizando banco de dados " +
                 "SQL Server, mas eu já usei Firebird, MySQL e PostgreSQL, eu gosto de estudar novas tecnologias, criar produtos inovadores, eu gosto de resolver problemas e desenvolver soluções seguindo normas e técnicas recomendadas pela comunidade.",
                 Contacts = new List<ContactDTO> {
                     new ContactDTO { Ord=1,Icon = "home", Description = "chasoliveira.com.br", Url = "/"},
@@ -52,6 +53,7 @@ namespace Chasoliveira.Core.Application
                     new SkillDTO { Ord=3, Class="warning", Description = "MS SQL", Progress = 80.0m },
                     new SkillDTO { Ord=4, Class="danger", Description = "JavaScript", Progress = 70.0m },
                     new SkillDTO { Ord=5, Class="info", Description = "AngularJS", Progress = 30.0m },
+                    new SkillDTO { Ord=6, Class="info", Description = "Xamarin", Progress = 60.0m }
                 },
                 Socials = new List<SocialDTO> {
                     new SocialDTO { Ord=1, Icon = "linkedin", Url = "https://linkedin.com/in/chasoliveira", Description = "LinkedIn"},
@@ -63,6 +65,16 @@ namespace Chasoliveira.Core.Application
                     new SocialDTO { Ord=7, Icon = "instagram", Url = "http://instagram.com/chasoliveira",Description = "Instagram"},
                 },
                 Histories = new List<HistoryDTO> {
+                     new HistoryDTO
+                    {
+                        Ord =0,
+                        HistoryType = HistoryType.Education,
+                        Title = "MBA em Arquitetura de Software",
+                        Company = "Intituto de Gestão em Tecnologia da Informação - IGTI",
+                        Location = "Online",
+                        Description = "",
+                        Start = new DateTime(2016, 08, 22)
+                    },
                      new HistoryDTO
                     {
                         Ord =1,
@@ -96,23 +108,34 @@ namespace Chasoliveira.Core.Application
                         Start = new DateTime(2007, 07, 01),
                         Finished = new DateTime(2011, 07, 30)
                     },
+                     new HistoryDTO
+                    {
+                        Ord =2,
+                        HistoryType = HistoryType.Position,
+                        Title = "Analista de Sistemas Pleno- .Net Developer",
+                        Company = "SINOBRAS - Siderúrgica Norte Brasil S.A",
+                        Location = "Marabá-PA, Brazil",
+                        Description =
+                            "Sou responsável por análisar e desenvolver aplicativos web, desktop e microservices, implementando as melhores práticas de desenvolvimento juntamente com o uso de padrões de projetos na plataforma ASP.NET MVC. Usamos o banco de dados Microsoft SQL Server, abstraído pela ferramenta de mapeamento de objetos relacionais Entity Framework, para persistência de dados. ",
+                        Start = new DateTime(2016, 07, 05),
+                    },
                     new HistoryDTO
                     {
-                          Ord =3,
+                         Ord =3,
                         HistoryType = HistoryType.Position,
                         Title = "Software Engineer - .Net Developer",
                         Company = "M2S Software",
                         Location = "Recife-PE, Brazil",
                         Description =
-                            "Atuo na análise e desenvolvimento de aplicativos cross-plataforma em Xamarin com a liguagem C#, também como parte do mesmo projeto, faço parte do time que desenvolve a versão web em ASP.Net MVC e Web API. Na camada de abstração de acesso a dados utilizaçãos o ORM NHibernate.",
+                            "Atuei na análise e desenvolvimento de aplicativos cross-plataforma em Xamarin com a liguagem C#, também como parte do mesmo projeto, faço parte do time que desenvolve a versão web em ASP.Net MVC e Web API. Na camada de abstração de acesso a dados utilizando o ORM NHibernate.",
                         Start = new DateTime(2016, 01, 05),
-                        Finished = null
+                        Finished = new DateTime(2016,06,30)
                     },
                     new HistoryDTO
                     {
                         Ord =5,
                         HistoryType = HistoryType.Position,
-                        Title = "Analista de Sistemas - .Net Developer",
+                        Title = "Analista de Sistemas Junior - .Net Developer",
                         Company = "SINOBRAS - Siderúrgica Norte Brasil S.A",
                         Location = "Marabá-PA, Brazil",
                         Description =

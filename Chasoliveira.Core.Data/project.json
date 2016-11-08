@@ -2,17 +2,14 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "Microsoft.NETCore.App": {
-      "type": "platform",
-      "version": "1.0.0-rc2-*"
-    },
-    "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0-rc2-*",
     "Microsoft.EntityFrameworkCore.Tools": {
       "type": "build",
       "version": "1.0.0-preview1-final"
     },
     "Chasoliveira.Core.Domain": "1.0.0-*",
-    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc2-final"
+    "Microsoft.EntityFrameworkCore.Sqlite": "1.0.1",
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+    "Microsoft.NETCore.App": "1.0.1"
   },
   "tools": {
     "Microsoft.EntityFrameworkCore.Tools": {

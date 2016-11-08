@@ -13,7 +13,7 @@ namespace Chasoliveira.Core.Mvc.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.0.0-rc2-20901");
+                .HasAnnotation("ProductVersion", "1.0.1");
 
             modelBuilder.Entity("Chasoliveira.Core.Domain.Entities.Contact", b =>
                 {
@@ -71,6 +71,8 @@ namespace Chasoliveira.Core.Mvc.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
 
                     b.Property<DateTime>("Birthday");
 
@@ -181,48 +183,48 @@ namespace Chasoliveira.Core.Mvc.Migrations
 
             modelBuilder.Entity("Chasoliveira.Core.Domain.Entities.Contact", b =>
                 {
-                    b.HasOne("Chasoliveira.Core.Domain.Entities.Person")
-                        .WithMany()
+                    b.HasOne("Chasoliveira.Core.Domain.Entities.Person", "Person")
+                        .WithMany("Contacts")
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Chasoliveira.Core.Domain.Entities.History", b =>
                 {
-                    b.HasOne("Chasoliveira.Core.Domain.Entities.Person")
-                        .WithMany()
+                    b.HasOne("Chasoliveira.Core.Domain.Entities.Person", "Person")
+                        .WithMany("Histories")
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Chasoliveira.Core.Domain.Entities.Skill", b =>
                 {
-                    b.HasOne("Chasoliveira.Core.Domain.Entities.Person")
-                        .WithMany()
+                    b.HasOne("Chasoliveira.Core.Domain.Entities.Person", "Person")
+                        .WithMany("Skills")
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Chasoliveira.Core.Domain.Entities.Social", b =>
                 {
-                    b.HasOne("Chasoliveira.Core.Domain.Entities.Person")
-                        .WithMany()
+                    b.HasOne("Chasoliveira.Core.Domain.Entities.Person", "Person")
+                        .WithMany("Socials")
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Chasoliveira.Core.Domain.Entities.Token", b =>
                 {
-                    b.HasOne("Chasoliveira.Core.Domain.Entities.User")
-                        .WithMany()
+                    b.HasOne("Chasoliveira.Core.Domain.Entities.User", "User")
+                        .WithMany("Tokens")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Chasoliveira.Core.Domain.Entities.User", b =>
                 {
-                    b.HasOne("Chasoliveira.Core.Domain.Entities.Person")
-                        .WithMany()
+                    b.HasOne("Chasoliveira.Core.Domain.Entities.Person", "Person")
+                        .WithMany("Users")
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

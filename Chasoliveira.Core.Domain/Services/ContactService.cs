@@ -17,7 +17,7 @@ namespace Chasoliveira.Core.Domain.Services
 
         public IEnumerable<Contact> AllByPerson(int personId)
         {
-            return _contactRepository.All(c => c.PersonId == personId).OrderBy(c => c.Ord);
+            return _contactRepository.All(c => c.PersonId == personId).OrderBy(c => c.Ord).ToList();
         }
     }
 }

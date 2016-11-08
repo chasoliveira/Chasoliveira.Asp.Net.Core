@@ -37,6 +37,7 @@ namespace Chasoliveira.Core.Dto
                 return age;
             }
         }
+        public bool Active { get; set; }
         public virtual ICollection<ContactDTO> Contacts { get; set; }
         public virtual ICollection<SocialDTO> Socials { get; set; }
         public virtual ICollection<HistoryDTO> Histories { get; set; }
